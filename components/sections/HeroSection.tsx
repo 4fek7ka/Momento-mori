@@ -1,57 +1,73 @@
 import Image from "next/image";
+import {
+  FaInstagram,
+  FaTelegramPlane,
+  FaEnvelope,
+  FaViber,
+} from "react-icons/fa";
 
 export default function HeroSection() {
   return (
     <section className="bg-[#1f1f1f] text-white">
-      <div className="mx-auto grid min-h-[720px] max-w-7xl grid-cols-1 items-center gap-10 px-6 py-10 md:grid-cols-2">
+      <div className="mx-auto grid min-h-[700px] max-w-7xl grid-cols-1 items-center gap-10 px-6 py-12 md:grid-cols-2">
+        {/* LEFT */}
         <div className="max-w-xl">
-          <div className="inline-flex rounded-full border border-white px-5 py-3 text-sm uppercase tracking-wide">
+          {/* badge */}
+          <div className="inline-flex rounded-full border border-white px-5 py-2 text-sm uppercase tracking-wide">
             Покупка частинами від mono
           </div>
 
-          <p className="mt-14 text-3xl leading-snug md:text-5xl">
+          {/* subtitle */}
+          <p className="mt-10 text-2xl leading-snug md:text-4xl">
             Ритуальна служба
             <br />
             нового формату
           </p>
 
-          <h1 className="mt-8 text-5xl text-[#d2ab67] md:text-7xl">
+          {/* title */}
+          <h1 className="mt-6 text-5xl text-[var(--accent)] md:text-7xl">
             Momento mori
           </h1>
 
-          <p className="mt-10 text-xl leading-10 text-white/90 md:text-2xl">
+          {/* description */}
+          <p className="mt-8 text-lg leading-8 text-white/80 md:text-xl">
             Організація прощання під ключ від{" "}
-            <span className="font-semibold text-[#d2ab67]">10 500</span> грн.
+            <span className="text-[var(--accent)] font-semibold">
+              10 500 грн
+            </span>
             <br />
             Працюємо у всіх районах Одеси 24/7.
             <br />
-            <span className="font-semibold text-[#d2ab67]">
+            <span className="text-[var(--accent)] font-semibold">
               Безкоштовний
             </span>{" "}
             виїзд агента на місце.
           </p>
 
+          {/* phone button */}
           <a
             href="tel:+380503661966"
-            className="mt-12 inline-flex rounded-full bg-white px-10 py-5 text-2xl text-[#3a3a3a] transition hover:opacity-90"
+            className="mt-10 inline-block rounded-full bg-white px-8 py-4 text-lg text-black"
           >
             +38 050 366 19 66
           </a>
 
-          <div className="mt-10 flex gap-6 text-[#d2ab67]">
-            <span>IG</span>
-            <span>TG</span>
-            <span>MAIL</span>
-            <span>VIBER</span>
+          {/* icons */}
+          <div className="mt-8 ml-2 flex gap-6 text-2xl text-[var(--accent)]">
+            <FaInstagram />
+            <FaTelegramPlane />
+            <FaEnvelope />
+            <FaViber />
           </div>
         </div>
 
-        <div className="relative h-[420px] md:h-[620px]">
+        {/* RIGHT */}
+        <div className="relative h-[400px] md:h-[600px]">
           <Image
-            src="/images/hero.png"
-            alt="Свеча и роза"
+            src="/images/hero/hero-main.jpg"
+            alt="Hero image"
             fill
-            className="object-contain object-center"
+            className="object-contain"
             priority
           />
         </div>
