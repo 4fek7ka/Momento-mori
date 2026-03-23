@@ -5,6 +5,7 @@ import VipSection from "@/components/sections/VipSection";
 import CondolenceSection from "@/components/sections/CondolenceSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesPreviewSection from "@/components/sections/ServicesPreviewSection";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <CondolenceSection />
       <AboutSection />
       <ServicesPreviewSection />
+      <Footer />
     </main>
   );
 }
