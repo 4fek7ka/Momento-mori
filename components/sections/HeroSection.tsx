@@ -62,13 +62,14 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT */}
-        <div className="relative h-[100px] md:h-[1000px]">
+        <div className="relative h-[320px] w-full sm:h-[420px] md:h-[520px] lg:h-[620px]">
           <Image
             src="/images/hero/hero-main.png"
             alt="Hero image"
             fill
-            className="object-contain"
             priority
+            className="object-contain object-center"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
           />
         </div>
       </div>
