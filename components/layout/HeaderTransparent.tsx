@@ -20,18 +20,24 @@ export default function HeaderTransparent() {
           <Link href="/" className="hover:text-[#e1b16c]">
             Головна
           </Link>
-          <Link href="/services" className="hover:text-[#e1b16c]">
+
+          {/* 🔥 ссылка на секцию */}
+          <Link href="/#services" className="hover:text-[#e1b16c]">
             Пакети послуг
           </Link>
-          <Link href="/ritual-products" className="text-[#e1b16c]">
+
+          <Link href="/ritual-products" className="hover:text-[#e1b16c]">
             Ритуальні товари
           </Link>
+
           <Link href="/about" className="hover:text-[#e1b16c]">
             Про нас
           </Link>
+
           <Link href="/payment" className="hover:text-[#e1b16c]">
             Оплата
           </Link>
+
           <Link href="/contacts" className="hover:text-[#e1b16c]">
             Контакти
           </Link>

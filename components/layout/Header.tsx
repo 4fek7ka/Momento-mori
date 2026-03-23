@@ -21,8 +21,9 @@ export default function Header() {
             Головна
           </Link>
 
+          {/* 🔥 ссылка на секцию */}
           <Link
-            href="/services"
+            href="/#services"
             className="transition hover:text-[var(--accent)]"
           >
             Пакети послуг

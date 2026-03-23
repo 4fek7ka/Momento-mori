@@ -16,7 +16,7 @@ export default function ServicesSection() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="bg-[#2a2a2d] px-6 py-20 text-white">
+    <section className="bg-[#2a2a2d] px-6 py-20 text-white" id="services">
       <div className="mx-auto max-w-[1400px]">
         <h2
           className="text-center text-4xl uppercase tracking-[0.18em] md:text-5xl"
