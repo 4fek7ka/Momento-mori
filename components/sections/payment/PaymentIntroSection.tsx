@@ -22,7 +22,8 @@ export default function PaymentIntroSection() {
 
         <div className="max-w-[720px]">
           <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
-            Головне – це пам&apos;ять. Оплата – частинами.
+            Головне – це пам&apos;ять
+            <div className="p">Оплата – частинами.</div>
           </h1>
 
           <div className="mt-8 space-y-6 text-[18px] leading-8 text-[#e1b16c]">
