@@ -62,9 +62,9 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT */}
-        <div className="relative h-[400px] md:h-[600px]">
+        <div className="relative h-[100px] md:h-[1000px]">
           <Image
-            src="/images/hero/hero-main.jpg"
+            src="/images/hero/hero-main.png"
             alt="Hero image"
             fill
             className="object-contain"
