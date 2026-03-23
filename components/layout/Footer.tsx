@@ -1,16 +1,17 @@
+import Link from "next/link";
 import {
   FaInstagram,
   FaTelegramPlane,
   FaEnvelope,
   FaViber,
 } from "react-icons/fa";
+import { navigationLinks } from "@/data/navigation";
 
 export default function Footer() {
   return (
     <footer className="bg-[#3b3b3d] text-white">
       <div className="mx-auto max-w-[1400px] px-6 pb-4 pt-16">
         <div className="grid gap-12 md:grid-cols-3 md:items-start">
-          {/* LEFT */}
           <div>
             <h3
               className="text-[34px] leading-none text-[#e1b16c]"
@@ -62,7 +63,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* CENTER */}
           <div className="text-center">
             <h3
               className="text-[42px] leading-none text-[#e1b16c]"
@@ -72,36 +72,15 @@ export default function Footer() {
             </h3>
 
             <nav className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-3 text-[16px] text-white/70">
-              <a
-                href="#"
-                className="underline underline-offset-4 hover:text-[#e1b16c]"
-              >
-                Головна
-              </a>
-              <a
-                href="#"
-                className="underline underline-offset-4 hover:text-[#e1b16c]"
-              >
-                Про нас
-              </a>
-              <a
-                href="#"
-                className="underline underline-offset-4 hover:text-[#e1b16c]"
-              >
-                Ритуальні послуги
-              </a>
-              <a
-                href="#"
-                className="underline underline-offset-4 hover:text-[#e1b16c]"
-              >
-                Оплата
-              </a>
-              <a
-                href="#"
-                className="underline underline-offset-4 hover:text-[#e1b16c]"
-              >
-                Контакти
-              </a>
+              {navigationLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="underline underline-offset-4 hover:text-[#e1b16c]"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
 
             <div className="mt-8 flex justify-center gap-6 text-[14px] text-[#e1b16c]">
@@ -136,7 +115,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="md:text-right">
             <h3 className="text-[34px] leading-none text-[#e1b16c]">
               Працюємо цілодобово
