@@ -159,10 +159,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <div className="bg-black py-3 text-center text-[14px] text-white/40">
-        Made with Weblium
-      </div>
     </footer>
   );
 }
