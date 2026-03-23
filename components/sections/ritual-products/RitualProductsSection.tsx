@@ -12,7 +12,7 @@ export default function RitualProductsSection() {
     >
       <div className="absolute inset-0 bg-black/45" />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] items-center justify-center px-6 py-16">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1400px] items-center justify-center px-6 pb-16 pt-[140px]">
         <div className="w-full max-w-[1000px] bg-[#3b3b3d]/95 px-10 py-12 shadow-2xl md:px-16 md:py-14">
           <h1 className="text-center text-5xl font-semibold text-white md:text-4xl">
             Ритуальна атрибутика
