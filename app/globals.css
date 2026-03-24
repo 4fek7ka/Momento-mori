@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --accent: #c9a96e;
-}
+/* =========================
+   Reset / base
+========================= */
 
 * {
   box-sizing: border-box;
@@ -17,18 +15,121 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  font-size: var(--text-size);
+  line-height: 1.5;
 }
+
+/* =========================
+   Design tokens
+========================= */
+
+:root {
+  --bg-main: #f2e6d6;
+  --bg-secondary: #d9c3a5;
+  --border-color: #b68c6b;
+  --accent: #8c5b3c;
+  --text-main: #4a3327;
+
+  --container-width: 1200px;
+  --container-padding: 24px;
+
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --font-main: "Inter", sans-serif;
+
+  --h1-size: clamp(48px, 6vw, 64px);
+  --h2-size: clamp(28px, 4vw, 36px);
+  --text-size: 16px;
+
+  --section-padding-y: 80px;
+  --transition-default: 0.25s ease;
+}
+
+/* =========================
+   Layout
+========================= */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* =========================
+   Typography
+========================= */
+
+h1 {
+  font-size: var(--h1-size);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--h2-size);
+  line-height: 1.2;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #f2e6d6;
+  font-size: 16px;
+  font-weight: 500;
+  transition: var(--transition-default);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #72482f;
+  border-color: #72482f;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 500;
+  transition: var(--transition-default);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(182, 140, 107, 0.12);
+}
+
+/* =========================
+   Custom components
+========================= */
+
 .services-bullet {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   display: inline-block;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition-default);
 }
 
 .services-bullet-active {
