@@ -8,17 +8,17 @@ import {
 
 export default function HeroSection() {
   return (
-    <section className="bg-[#1f1f1f] text-white">
+    <section className="bg-[var(--bg-main)] text-[var(--text-main)]">
       <div className="mx-auto grid min-h-[700px] max-w-7xl grid-cols-1 items-center gap-10 px-6 py-12 md:grid-cols-2">
         {/* LEFT */}
         <div className="max-w-xl">
           {/* badge */}
-          <div className="inline-flex rounded-full border border-white px-5 py-2 text-sm uppercase tracking-wide">
+          <div className="inline-flex rounded-full border border-[var(--border-color)] px-5 py-2 text-sm uppercase tracking-wide text-[var(--text-secondary)]">
             Покупка частинами від mono
           </div>
 
           {/* subtitle */}
-          <p className="mt-10 text-2xl leading-snug md:text-4xl">
+          <p className="mt-10 text-2xl leading-snug text-[var(--text-secondary)] md:text-4xl">
             Ритуальна служба
             <br />
             нового формату
@@ -30,7 +30,7 @@ export default function HeroSection() {
           </h1>
 
           {/* description */}
-          <p className="mt-8 text-lg leading-8 text-white/80 md:text-xl">
+          <p className="mt-8 text-lg leading-8 text-[var(--text-secondary)] md:text-xl">
             Організація прощання під ключ від{" "}
             <span className="text-[var(--accent)] font-semibold">
               10 500 грн
@@ -47,7 +47,7 @@ export default function HeroSection() {
           {/* phone button */}
           <a
             href="tel:+380503661966"
-            className="mt-10 inline-block rounded-full bg-white px-8 py-4 text-lg text-black"
+            className="mt-10 inline-block rounded-full bg-[var(--accent)] px-8 py-4 text-lg text-[var(--bg-main)] transition hover:opacity-90"
           >
             +38 050 366 19 66
           </a>
