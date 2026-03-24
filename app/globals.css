@@ -4,7 +4,9 @@
    Reset / base
 ========================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -27,19 +29,28 @@ body {
 ========================= */
 
 :root {
-  --bg-main: #f2e6d6;
-  --bg-secondary: #d9c3a5;
-  --border-color: #b68c6b;
-  --accent: #8c5b3c;
-  --text-main: #4a3327;
+  --bg-main: #1f1a17;
+  --bg-secondary: #2b241f;
+  --surface: #332a24;
+  --surface-hover: #3b312a;
+
+  --border-color: #6f5746;
+  --accent: #b68c6b;
+  --accent-hover: #c79d7c;
+
+  --text-main: #f2e6d6;
+  --text-secondary: #d9c3a5;
+  --text-muted: #b68c6b;
 
   --container-width: 1200px;
   --container-padding: 24px;
 
+  --radius-sm: 8px;
   --radius-md: 10px;
   --radius-lg: 14px;
+  --radius-xl: 18px;
 
-  --font-main: "Inter", sans-serif;
+  --font-main: "Inter", Arial, Helvetica, sans-serif;
 
   --h1-size: clamp(48px, 6vw, 64px);
   --h2-size: clamp(28px, 4vw, 36px);
@@ -47,6 +58,8 @@ body {
 
   --section-padding-y: 80px;
   --transition-default: 0.25s ease;
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================
@@ -65,14 +78,34 @@ body {
    Typography
 ========================= */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
 h1 {
   font-size: var(--h1-size);
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 h2 {
   font-size: var(--h2-size);
-  line-height: 1.2;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* =========================
@@ -87,16 +120,22 @@ h2 {
   border-radius: var(--radius-md);
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: #f2e6d6;
+  color: var(--bg-main);
   font-size: 16px;
   font-weight: 500;
-  transition: var(--transition-default);
+  line-height: 1;
+  transition:
+    background var(--transition-default),
+    border-color var(--transition-default),
+    color var(--transition-default),
+    transform var(--transition-default);
   cursor: pointer;
 }
 
 .btn-primary:hover {
-  background: #72482f;
-  border-color: #72482f;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -110,12 +149,19 @@ h2 {
   color: var(--text-main);
   font-size: 16px;
   font-weight: 500;
-  transition: var(--transition-default);
+  line-height: 1;
+  transition:
+    background var(--transition-default),
+    border-color var(--transition-default),
+    color var(--transition-default),
+    transform var(--transition-default);
   cursor: pointer;
 }
 
 .btn-secondary:hover {
   background: rgba(182, 140, 107, 0.12);
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 /* =========================
@@ -126,10 +172,16 @@ h2 {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(242, 230, 214, 0.22);
   display: inline-block;
   cursor: pointer;
-  transition: var(--transition-default);
+  transition:
+    background var(--transition-default),
+    transform var(--transition-default);
+}
+
+.services-bullet:hover {
+  transform: scale(1.08);
 }
 
 .services-bullet-active {
