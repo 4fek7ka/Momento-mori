@@ -16,7 +16,10 @@ export default function ServicesSection() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="bg-[#2a2a2d] px-6 py-20 text-white" id="services">
+    <section
+      className="bg-[var(--bg-secondary)] px-6 py-20 text-[var(--text-main)]"
+      id="services"
+    >
       <div className="mx-auto max-w-[1400px]">
         <h2
           className="text-center text-4xl uppercase tracking-[0.18em] md:text-5xl"
@@ -25,7 +28,7 @@ export default function ServicesSection() {
           Пакети послуг
         </h2>
 
-        <p className="mt-6 text-center text-sm italic text-[var(--accent)] md:text-base">
+        <p className="mt-6 text-center text-sm italic text-[var(--text-secondary)] md:text-base">
           За бажанням ви можете додавати або видаляти будь-які пункти.
         </p>
 
@@ -84,7 +87,7 @@ export default function ServicesSection() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <button className="rounded-full bg-[var(--accent)] px-10 py-4 text-sm font-semibold uppercase tracking-wide text-white">
+            <button className="btn-primary rounded-full px-10 py-4 text-sm font-semibold uppercase tracking-wide">
               Замовити
             </button>
           </div>

@@ -7,7 +7,7 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ item }: ServiceCardProps) {
   return (
-    <article className="flex h-full w-full flex-col bg-[#3a3a3d] px-8 py-8 text-white">
+    <article className="flex h-full w-full flex-col bg-[var(--surface)] px-8 py-8 text-[var(--text-main)]">
       <div className="mx-auto flex h-[340px] w-full max-w-[360px] items-center justify-center">
         <img
           src={item.image}
@@ -25,20 +25,20 @@ export default function ServiceCard({ item }: ServiceCardProps) {
         {item.price}
       </p>
 
-      <p className="mx-auto mt-8 max-w-[290px] text-center text-[16px] font-semibold leading-7">
+      <p className="mx-auto mt-8 max-w-[290px] text-center text-[16px] font-semibold leading-7 text-[var(--text-secondary)]">
         {item.description}
       </p>
 
-      <ul className="mt-8 flex-1 space-y-4 text-[16px] leading-7">
+      <ul className="mt-8 flex-1 space-y-4 text-[16px] leading-7 text-[var(--text-secondary)]">
         {item.items.map((point, index) => (
           <li key={index} className="flex items-start gap-3">
-            <FaCheckCircle className="mt-1 shrink-0 text-white" />
+            <FaCheckCircle className="mt-1 shrink-0 text-[var(--accent)]" />
             <span>{point}</span>
           </li>
         ))}
       </ul>
 
-      <p className="mt-6 text-center text-sm font-semibold text-white/20">
+      <p className="mt-6 text-center text-sm font-semibold text-[var(--text-muted)]">
         {item.id}
       </p>
     </article>

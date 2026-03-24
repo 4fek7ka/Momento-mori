@@ -172,12 +172,20 @@ a {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background: rgba(242, 230, 214, 0.22);
+  background: var(--border-color);
+  opacity: 0.4;
   display: inline-block;
   cursor: pointer;
-  transition:
-    background var(--transition-default),
-    transform var(--transition-default);
+  transition: var(--transition-default);
+}
+
+.services-bullet:hover {
+  opacity: 0.7;
+}
+
+.services-bullet-active {
+  background: var(--accent);
+  opacity: 1;
 }
 
 .services-bullet:hover {
