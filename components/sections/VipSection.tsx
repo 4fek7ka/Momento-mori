@@ -5,12 +5,12 @@ import { vipImages, vipItems } from "@/data/vipPackage";
 
 export default function VipSection() {
   return (
-    <section className="bg-[#240800] px-6 py-20 text-white">
+    <section className="bg-[var(--bg-main)] px-6 py-20 text-[var(--text-main)]">
       <div className="mx-auto max-w-[1400px]">
         <div className="grid gap-10 xl:grid-cols-[440px_minmax(0,1fr)] xl:items-start">
           <div className="grid grid-cols-2 gap-5">
             {vipImages.map((src, index) => (
-              <div key={index} className="overflow-hidden bg-white/5">
+              <div key={index} className="overflow-hidden bg-[var(--surface)]">
                 <img
                   src={src}
                   alt={`VIP послуга ${index + 1}`}
@@ -22,16 +22,17 @@ export default function VipSection() {
 
           <div>
             <h2 className="text-4xl font-semibold leading-tight md:text-5xl">
-              VIP-пакет від 150 000 грн
+              VIP-пакет від{" "}
+              <span className="text-[var(--accent)]">150 000 грн</span>
             </h2>
 
-            <p className="mt-8 max-w-[760px] text-[17px] leading-8 text-[#e1b16c]">
+            <p className="mt-8 max-w-[760px] text-[17px] leading-8 text-[var(--text-secondary)]">
               Наш VIP-пакет ритуальних послуг — це гарантія елітного супроводу
               та бездоганної церемонії прощання, що гідна світлої пам’яті Вашої
               близької людини.
             </p>
 
-            <p className="mt-6 max-w-[760px] text-[16px] leading-8 text-white/90">
+            <p className="mt-6 max-w-[760px] text-[16px] leading-8 text-[var(--text-secondary)]">
               VIP-пакет передбачає ексклюзивний вибір труни-саркофага з
               рідкісних порід дерева. Процесія супроводжується катафалком
               преміум-класу (наприклад, Cadillac) та комфортабельним транспортом
@@ -47,7 +48,7 @@ export default function VipSection() {
             </p>
 
             <div className="mt-8">
-              <button className="rounded-full bg-[#e1b16c] px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white transition hover:opacity-90">
+              <button className="btn-primary rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide">
                 VIP КОНСУЛЬТАЦІЯ
               </button>
             </div>
@@ -56,10 +57,13 @@ export default function VipSection() {
 
         <div className="mt-14 grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
           {vipItems.map((column, colIndex) => (
-            <ul key={colIndex} className="space-y-5 text-[16px] leading-7">
+            <ul
+              key={colIndex}
+              className="space-y-5 text-[16px] leading-7 text-[var(--text-secondary)]"
+            >
               {column.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="mt-1 shrink-0 text-white" />
+                  <FaCheckCircle className="mt-1 shrink-0 text-[var(--accent)]" />
                   <span>{item}</span>
                 </li>
               ))}
