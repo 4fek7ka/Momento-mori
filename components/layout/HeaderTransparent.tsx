@@ -3,12 +3,12 @@ import { navigationLinks } from "@/data/navigation";
 
 export default function HeaderTransparent() {
   return (
-    <header className="absolute top-0 z-50 w-full text-white">
+    <header className="absolute top-0 z-50 w-full text-[var(--text-main)]">
       <div className="mx-auto flex h-[120px] max-w-[1600px] items-center justify-between px-8">
         <div>
           <Link
             href="/"
-            className="text-[42px] leading-none text-[#e1b16c]"
+            className="text-[42px] leading-none text-[var(--accent)]"
             style={{ fontFamily: "serif" }}
           >
             Momento mori
@@ -20,7 +20,7 @@ export default function HeaderTransparent() {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-[#e1b16c]"
+              className="transition hover:text-[var(--accent)]"
             >
               {link.label}
             </Link>
@@ -28,11 +28,17 @@ export default function HeaderTransparent() {
         </nav>
 
         <div className="text-right text-[16px] leading-[1.4]">
-          <p className="text-[#e1b16c]">Цілодобово:</p>
-          <a href="tel:+380503661966" className="block">
+          <p className="text-[var(--accent)]">Цілодобово:</p>
+          <a
+            href="tel:+380503661966"
+            className="block transition hover:text-[var(--accent)]"
+          >
             +38 050 366 19 66
           </a>
-          <a href="tel:+380679661966" className="block">
+          <a
+            href="tel:+380679661966"
+            className="block transition hover:text-[var(--accent)]"
+          >
             +38 067 966 19 66
           </a>
         </div>
