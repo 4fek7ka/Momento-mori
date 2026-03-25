@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { navigationLinks } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
 
 export default function HeaderTransparent() {
   return (
@@ -11,7 +12,7 @@ export default function HeaderTransparent() {
             className="text-[42px] leading-none text-[var(--accent)]"
             style={{ fontFamily: "serif" }}
           >
-            Momento mori
+            {siteConfig.name}
           </Link>
         </div>
 
@@ -29,18 +30,16 @@ export default function HeaderTransparent() {
 
         <div className="text-right text-[16px] leading-[1.4]">
           <p className="text-[var(--accent)]">Цілодобово:</p>
-          <a
-            href="tel:+380503661966"
-            className="block transition hover:text-[var(--accent)]"
-          >
-            +38 050 366 19 66
-          </a>
-          <a
-            href="tel:+380679661966"
-            className="block transition hover:text-[var(--accent)]"
-          >
-            +38 067 966 19 66
-          </a>
+
+          {siteConfig.contacts.phones.map((phone, index) => (
+            <a
+              key={phone}
+              href={`tel:${phone}`}
+              className="block transition hover:text-[var(--accent)]"
+            >
+              {siteConfig.contacts.phonesFormatted[index]}
+            </a>
+          ))}
         </div>
       </div>
     </header>
