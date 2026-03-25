@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { navigationLinks } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 
@@ -8,13 +9,23 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-[rgba(18,18,18,0.85)] border-b border-[var(--border-color)] text-[var(--text-main)]">
       <div className="mx-auto flex h-[96px] max-w-[1400px] items-center justify-between px-6">
-        {/* LOGO */}
-        <Link
-          href="/"
-          className="text-[32px] tracking-wide text-[var(--accent)]"
-          style={{ fontFamily: "serif" }}
-        >
-          {siteConfig.name}
+        {/* LOGO + NAME */}
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/images/logo.png" // путь к логотипу
+            alt="Логотип Елізій"
+            width={48}
+            height={48}
+            priority
+            className="h-auto w-[40px] md:w-[48px]"
+          />
+
+          <span
+            className="text-[28px] tracking-wide text-[var(--accent)] md:text-[32px]"
+            style={{ fontFamily: "serif" }}
+          >
+            {siteConfig.name}
+          </span>
         </Link>
 
         {/* NAV */}

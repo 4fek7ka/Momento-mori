@@ -9,6 +9,18 @@ export default function HeroSection() {
       <div className="mx-auto grid min-h-[calc(100vh-96px)] max-w-[1280px] items-center gap-12 px-5 py-14 md:px-6 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-16 lg:py-20">
         {/* LEFT */}
         <div className="max-w-[560px]">
+          {/* LOGO */}
+          <div className="mb-6">
+            <Image
+              src="/images/logo.png" // если в public/images/
+              alt="Логотип Елізій"
+              width={110}
+              height={110}
+              priority
+              className="h-auto w-[88px] md:w-[100px] lg:w-[110px]"
+            />
+          </div>
+
           {/* label */}
           <p className="text-[13px] uppercase tracking-[0.24em] text-[var(--text-muted)]">
             {tagline}

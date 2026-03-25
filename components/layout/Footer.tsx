@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaInstagram,
   FaTelegramPlane,
@@ -13,6 +14,7 @@ export default function Footer() {
     <footer className="bg-[var(--bg-secondary)] text-[var(--text-main)]">
       <div className="mx-auto max-w-[1400px] px-6 pb-4 pt-16">
         <div className="grid gap-12 md:grid-cols-3 md:items-start">
+          {/* LEFT */}
           <div>
             <h3
               className="text-[34px] leading-none text-[var(--text-main)]"
@@ -43,7 +45,19 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* CENTER */}
           <div className="text-center">
+            {/* LOGO */}
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Логотип Елізій"
+                width={80}
+                height={80}
+                className="h-auto w-[64px] md:w-[80px]"
+              />
+            </div>
+
             <h3
               className="text-[42px] leading-none text-[var(--text-main)]"
               style={{ fontFamily: "serif" }}
@@ -68,37 +82,22 @@ export default function Footer() {
             </nav>
 
             <div className="mt-8 flex justify-center gap-6 text-[14px] text-[var(--accent)]">
-              <a
-                href="#"
-                className="transition hover:opacity-70"
-                aria-label="Instagram"
-              >
+              <a href="#" className="transition hover:opacity-70">
                 <FaInstagram size={20} />
               </a>
-              <a
-                href="#"
-                className="transition hover:opacity-70"
-                aria-label="Telegram"
-              >
+              <a href="#" className="transition hover:opacity-70">
                 <FaTelegramPlane size={20} />
               </a>
-              <a
-                href="#"
-                className="transition hover:opacity-70"
-                aria-label="Email"
-              >
+              <a href="#" className="transition hover:opacity-70">
                 <FaEnvelope size={20} />
               </a>
-              <a
-                href="#"
-                className="transition hover:opacity-70"
-                aria-label="Viber"
-              >
+              <a href="#" className="transition hover:opacity-70">
                 <FaViber size={20} />
               </a>
             </div>
           </div>
 
+          {/* RIGHT */}
           <div className="md:text-right">
             <h3 className="text-[34px] leading-none text-[var(--text-main)]">
               Працюємо цілодобово
@@ -113,6 +112,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* BOTTOM */}
         <div className="mt-12 border-t border-[var(--border-color)] pt-4">
           <div className="flex flex-col gap-3 text-[14px] italic text-[var(--text-muted)] md:flex-row md:items-center md:justify-between">
             <p>© Created by CemechKO</p>
