@@ -6,18 +6,23 @@ import CondolenceSection from "@/components/sections/CondolenceSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ServicesPreviewSection from "@/components/sections/ServicesPreviewSection";
 import Footer from "@/components/layout/Footer";
+import PhoneFloatingButton from "@/components/layout/PhoneFloatingButton";
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <HeroSection />
-      <ServicesSection />
-      <VipSection />
-      <CondolenceSection />
-      <AboutSection />
-      <ServicesPreviewSection />
-      <Footer />
-    </main>
+    <>
+      <main>
+        <Header />
+        <HeroSection />
+        <ServicesSection />
+        <VipSection />
+        <CondolenceSection />
+        <AboutSection />
+        <ServicesPreviewSection />
+        <Footer />
+      </main>
+
+      <PhoneFloatingButton />
+    </>
   );
 }
