@@ -8,7 +8,6 @@ export default function PaymentPage() {
     <main>
       <HeaderTransparent />
       <PaymentIntroSection />
-      <PaymentDetailsSection />
       <Footer />
     </main>
   );
