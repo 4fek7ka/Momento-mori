@@ -118,23 +118,23 @@ a {
   justify-content: center;
   padding: 12px 20px;
   border-radius: var(--radius-md);
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: var(--bg-main);
+
+  background: #d9b99b; /* светлее чем accent */
+  border: 1px solid #d9b99b;
+
+  color: #1a1512; /* почти чёрный */
+
   font-size: 16px;
   font-weight: 500;
   line-height: 1;
-  transition:
-    background var(--transition-default),
-    border-color var(--transition-default),
-    color var(--transition-default),
-    transform var(--transition-default);
+
+  transition: var(--transition-default);
   cursor: pointer;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
+  background: #e6c6a8;
+  border-color: #e6c6a8;
   transform: translateY(-1px);
 }
 
