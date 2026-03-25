@@ -1,27 +1,22 @@
 "use client";
 
-import { FaChurch, FaBoxOpen, FaTruck, FaFileAlt } from "react-icons/fa";
-
 const features = [
   {
-    icon: FaChurch,
     title: "Ритуальні послуги",
-    text: "Організація поховання або кремації в Одесі та області.",
+    text: "Організація поховання або кремації в Одесі та області з повним супроводом.",
+  },
+
+  {
+    title: "Транспорт та логістика",
+    text: "Катафалк, перевезення, організація процесії та супровід родини.",
   },
   {
-    icon: FaBoxOpen,
-    title: "Ритуальні товари",
-    text: "Ритуальна атрибутика за доступними цінами.",
-  },
-  {
-    icon: FaTruck,
-    title: "Похоронний транспорт",
-    text: "Транспортування тіла в морг, послуги катафалка, транспорт для перевезення рідних та близьких.",
-  },
-  {
-    icon: FaFileAlt,
     title: "Оформлення документів",
-    text: "Підготовка документації будь-якої складності.",
+    text: "Повне юридичне оформлення та вирішення всіх організаційних питань.",
+  },
+  {
+    title: "Ритуальні товари",
+    text: "Добір якісної ритуальної атрибутики відповідно до бюджету та побажань родини.",
   },
 ];
 
@@ -36,56 +31,46 @@ export default function CondolenceSection() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* overlay под систему */}
       <div className="absolute inset-0 bg-[rgba(31,26,23,0.75)]" />
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(31,26,23,0.6),rgba(31,26,23,0.9))]" />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 py-20">
-        <div className="grid gap-12 xl:grid-cols-[1.05fr_0.95fr] xl:items-center">
-          <div className="max-w-[560px] text-center xl:text-left">
-            <h2 className="text-4xl font-semibold md:text-5xl">
-              Співчуваємо Вашій втраті
-            </h2>
+      <div className="relative mx-auto max-w-[1200px] px-6 py-24">
+        <div className="text-center">
+          <p className="mx-auto text-[13px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+            Підтримка поруч
+          </p>
 
-            <div className="mt-5 flex justify-center xl:justify-start">
-              <span className="text-2xl text-[var(--accent)]">❦</span>
-            </div>
-
-            <p className="mt-8 text-2xl leading-relaxed text-[var(--text-secondary)]">
-              Ми допоможемо Вам у скрутну хвилину.
-              <br />
-              Ми працюємо цілодобово.
+          <h2 className="mt-5 text-4xl font-medium md:text-5xl">
+            Співчуваємо Вашій втраті
+          </h2>
+          <div className="flex justify-center ">
+            <p className="mt-8 max-w-[640px] text-center text-[18px] leading-8 text-[var(--text-secondary)]">
+              Ми поруч, щоб взяти на себе всі організаційні питання та допомогти
+              пройти цей складний період спокійно та гідно.
             </p>
+          </div>
 
-            <div className="mt-10">
-              <button className="btn-primary rounded-full px-10 py-4 text-sm font-semibold uppercase tracking-wide">
-                ПОТРІБНА ДОПОМОГА
-              </button>
+          <div className="mt-10">
+            <button className="btn-primary px-10 py-4 text-sm font-semibold uppercase tracking-wide">
+              Отримати допомогу
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-20 grid gap-10 md:grid-cols-2">
+          {features.map((item, index) => (
+            <div key={index} className="max-w-[520px]">
+              <h3 className="text-[20px] font-medium text-[var(--text-main)]">
+                {item.title}
+              </h3>
+
+              <div className="mt-3 h-px w-full bg-[var(--border-color)]" />
+
+              <p className="mt-4 text-[16px] leading-7 text-[var(--text-secondary)]">
+                {item.text}
+              </p>
             </div>
-          </div>
-
-          <div className="space-y-8">
-            {features.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center text-[var(--accent)]">
-                    <Icon size={34} />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-[var(--text-main)]">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-[17px] leading-7 text-[var(--text-secondary)]">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          ))}
         </div>
       </div>
     </section>
