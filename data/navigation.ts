@@ -19,8 +19,4 @@ export const navigationLinks = [
     label: "Оплата",
     href: "/payment",
   },
-  {
-    label: "Контакти",
-    href: "/contacts",
-  },
 ];
