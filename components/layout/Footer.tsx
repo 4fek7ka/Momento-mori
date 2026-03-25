@@ -6,6 +6,7 @@ import {
   FaViber,
 } from "react-icons/fa";
 import { navigationLinks } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -25,43 +26,20 @@ export default function Footer() {
             <div className="mt-6 space-y-1 text-[18px] leading-8 text-[var(--text-secondary)]">
               <p>
                 <span className="font-semibold text-[var(--text-main)]">
-                  Телефон:
-                </span>{" "}
-                <a
-                  href="tel:+380503661966"
-                  className="underline underline-offset-4 transition hover:text-[var(--accent)]"
-                >
-                  +38 (050) 366 19 66
-                </a>
+                  Телефони:
+                </span>
               </p>
 
-              <p>
-                <a
-                  href="tel:+380679661966"
-                  className="underline underline-offset-4 transition hover:text-[var(--accent)]"
-                >
-                  +38 (067) 966 19 66
-                </a>
-              </p>
-
-              <p>
-                <a
-                  href="tel:+380633661966"
-                  className="underline underline-offset-4 transition hover:text-[var(--accent)]"
-                >
-                  +38 (063) 366 19 66
-                </a>
-              </p>
-            </div>
-
-            <div className="mt-5 text-[18px] leading-8 text-[var(--text-secondary)]">
-              <p className="font-semibold text-[var(--text-main)]">Email:</p>
-              <a
-                href="mailto:momento.mori.ritual@gmail.com"
-                className="underline underline-offset-4 transition hover:text-[var(--accent)]"
-              >
-                momento.mori.ritual@gmail.com
-              </a>
+              {siteConfig.contacts.phones.map((phone, index) => (
+                <p key={phone}>
+                  <a
+                    href={`tel:${phone}`}
+                    className="underline underline-offset-4 transition hover:text-[var(--accent)]"
+                  >
+                    {siteConfig.contacts.phonesFormatted[index]}
+                  </a>
+                </p>
+              ))}
             </div>
           </div>
 
@@ -70,8 +48,12 @@ export default function Footer() {
               className="text-[42px] leading-none text-[var(--text-main)]"
               style={{ fontFamily: "serif" }}
             >
-              Momento Mori
+              {siteConfig.name}
             </h3>
+
+            <p className="mt-4 text-[15px] text-[var(--text-secondary)]">
+              {siteConfig.tagline}
+            </p>
 
             <nav className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-3 text-[16px] text-[var(--text-muted)]">
               {navigationLinks.map((link) => (
@@ -101,7 +83,7 @@ export default function Footer() {
                 <FaTelegramPlane size={20} />
               </a>
               <a
-                href="mailto:momento.mori.ritual@gmail.com"
+                href="#"
                 className="transition hover:opacity-70"
                 aria-label="Email"
               >
@@ -126,15 +108,14 @@ export default function Footer() {
 
             <div className="mt-6 text-[18px] leading-8 text-[var(--text-secondary)]">
               <p className="font-semibold text-[var(--text-main)]">Адреса:</p>
-              <p>м. Одеса,</p>
-              <p>вул. Віталія Нестеренка</p>
+              <p>{siteConfig.contacts.address}</p>
             </div>
           </div>
         </div>
 
         <div className="mt-12 border-t border-[var(--border-color)] pt-4">
           <div className="flex flex-col gap-3 text-[14px] italic text-[var(--text-muted)] md:flex-row md:items-center md:justify-between">
-            <p>© Created by TUZLOVA</p>
+            <p>© Created by CemechKO</p>
             <p>All rights Reserved</p>
           </div>
         </div>
