@@ -1,76 +1,102 @@
 import Image from "next/image";
-import {
-  FaInstagram,
-  FaTelegramPlane,
-  FaEnvelope,
-  FaViber,
-} from "react-icons/fa";
+import { siteConfig } from "@/data/site";
 
 export default function HeroSection() {
+  const { name, tagline, contacts } = siteConfig;
+
   return (
     <section className="bg-[var(--bg-main)] text-[var(--text-main)]">
-      <div className="mx-auto grid min-h-[700px] max-w-7xl grid-cols-1 items-center gap-10 px-6 py-12 md:grid-cols-2">
+      <div className="mx-auto grid min-h-[calc(100vh-96px)] max-w-[1280px] items-center gap-12 px-5 py-14 md:px-6 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-16 lg:py-20">
         {/* LEFT */}
-        <div className="max-w-xl">
-          {/* badge */}
-          <div className="inline-flex rounded-full border border-[var(--border-color)] px-5 py-2 text-sm uppercase tracking-wide text-[var(--text-secondary)]">
-            Покупка частинами від mono
-          </div>
-
-          {/* subtitle */}
-          <p className="mt-10 text-2xl leading-snug text-[var(--text-secondary)] md:text-4xl">
-            Ритуальна служба
-            <br />
-            нового формату
+        <div className="max-w-[560px]">
+          {/* label */}
+          <p className="text-[13px] uppercase tracking-[0.24em] text-[var(--text-muted)]">
+            {tagline}
           </p>
 
           {/* title */}
-          <h1 className="mt-6 text-5xl text-[var(--accent)] md:text-7xl">
-            Momento mori
+          <h1 className="mt-6 text-[42px] font-medium leading-[1.08] md:text-[56px] lg:text-[64px]">
+            {name}
           </h1>
 
           {/* description */}
-          <p className="mt-8 text-lg leading-8 text-[var(--text-secondary)] md:text-xl">
-            Організація прощання під ключ від{" "}
-            <span className="text-[var(--accent)] font-semibold">
-              10 500 грн
-            </span>
-            <br />
-            Працюємо у всіх районах Одеси 24/7.
-            <br />
-            <span className="text-[var(--accent)] font-semibold">
-              Безкоштовний
-            </span>{" "}
-            виїзд агента на місце.
+          <p className="mt-8 max-w-[500px] text-[17px] leading-8 text-[var(--text-secondary)] md:text-[18px]">
+            Організація прощання з повагою, спокоєм і людяністю. Ми беремо на
+            себе всі організаційні питання, щоб у складний момент ви могли
+            зосередитися на головному.
           </p>
 
-          {/* phone button */}
-          <a
-            href="tel:+380503661966"
-            className="mt-10 inline-block rounded-full bg-[var(--accent)] px-8 py-4 text-lg text-[var(--bg-main)] transition hover:opacity-90"
-          >
-            +38 050 366 19 66
-          </a>
+          {/* buttons */}
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href={`tel:${contacts.phones[0]}`}
+              className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95"
+            >
+              Отримати допомогу
+            </a>
 
-          {/* icons */}
-          <div className="mt-8 ml-2 flex gap-6 text-2xl text-[var(--accent)]">
-            <FaInstagram />
-            <FaTelegramPlane />
-            <FaEnvelope />
-            <FaViber />
+            <a
+              href={`tel:${contacts.phones[0]}`}
+              className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] border border-[var(--border-color)] px-6 py-3 text-[15px] font-medium text-[var(--text-main)] transition hover:bg-[var(--surface)]"
+            >
+              {contacts.phonesFormatted[0]}
+            </a>
+          </div>
+
+          {/* meta */}
+          <div className="mt-10 grid max-w-[520px] gap-5 border-t border-[var(--border-color)] pt-6 sm:grid-cols-3">
+            <div>
+              <p className="text-[13px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                Адреса
+              </p>
+              <p className="mt-2 text-[16px] leading-7 text-[var(--text-secondary)]">
+                {contacts.address}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-[13px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                Графік
+              </p>
+              <p className="mt-2 text-[16px] leading-7 text-[var(--text-secondary)]">
+                24/7 без вихідних
+              </p>
+            </div>
+
+            <div>
+              <p className="text-[13px] uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                Формат
+              </p>
+              <p className="mt-2 text-[16px] leading-7 text-[var(--text-secondary)]">
+                Повний супровід
+              </p>
+            </div>
           </div>
         </div>
 
         {/* RIGHT */}
-        <div className="relative h-[320px] w-full sm:h-[420px] md:h-[520px] lg:h-[620px]">
-          <Image
-            src="/images/hero/hero-main.png"
-            alt="Hero image"
-            fill
-            priority
-            className="object-contain object-center"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
-          />
+        <div className="relative">
+          <div className="relative overflow-hidden rounded-[18px] bg-[var(--bg-secondary)]">
+            <div className="relative aspect-[4/5] w-full">
+              <Image
+                src="/images/hero/hero-main.png"
+                alt="Ритуальні послуги Елізій"
+                fill
+                priority
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
+
+          {/* floating card */}
+          <div className="absolute bottom-4 left-4 max-w-[260px] rounded-[14px] border border-[rgba(255,255,255,0.18)] bg-[rgba(245,239,231,0.88)] px-5 py-4 backdrop-blur-sm">
+            <p className="text-[12px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
+              Перший контакт
+            </p>
+            <p className="mt-2 text-[15px] leading-6 text-[var(--text-main)]">
+              Виїзд агента та консультація без зайвого навантаження для родини.
+            </p>
+          </div>
         </div>
       </div>
     </section>
