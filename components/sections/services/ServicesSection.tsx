@@ -1,94 +1,47 @@
 "use client";
 
-import { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import type { Swiper as SwiperType } from "swiper";
-
-import "swiper/css";
-import "swiper/css/pagination";
-
 import { servicePackages } from "@/data/servicePackages";
 import ServiceCard from "@/components/sections/services/ServiceCard";
 
 export default function ServicesSection() {
-  const swiperRef = useRef<SwiperType | null>(null);
+  const mainPackages = servicePackages.filter((item) => !item.isFeatured);
 
   return (
     <section
-      className="bg-[var(--bg-secondary)] px-6 py-20 text-[var(--text-main)]"
       id="services"
+      className="bg-[var(--bg-secondary)] px-6 py-20 text-[var(--text-main)]"
     >
-      <div className="mx-auto max-w-[1400px]">
-        <h2
-          className="text-center text-4xl uppercase tracking-[0.18em] md:text-5xl"
-          style={{ fontFamily: "serif" }}
-        >
-          Пакети послуг
-        </h2>
+      <div className="mx-auto max-w-[1280px]">
+        <div className="mx-auto max-w-[760px] text-center">
+          <p className="text-[13px] uppercase tracking-[0.22em] text-[var(--text-muted)]">
+            Формати супроводу
+          </p>
 
-        <p className="mt-6 text-center text-sm italic text-[var(--text-secondary)] md:text-base">
-          За бажанням ви можете додавати або видаляти будь-які пункти.
-        </p>
+          <h2 className="mt-5 text-4xl font-medium leading-tight md:text-5xl">
+            Пакети ритуальних послуг
+          </h2>
 
-        <div className="relative mt-14">
-          <button
-            type="button"
-            onClick={() => swiperRef.current?.slidePrev()}
-            className="absolute left-[-35px] top-1/2 z-10 hidden -translate-y-1/2 text-[var(--accent)] lg:block"
-            aria-label="Попередній слайд"
-          >
-            <FaChevronLeft size={22} />
-          </button>
+          <p className="mt-6 text-[17px] leading-8 text-[var(--text-secondary)]">
+            Ми підготували кілька форматів супроводу, щоб ви могли обрати
+            рішення відповідно до ваших потреб, побажань та бюджету.
+          </p>
+        </div>
 
-          <button
-            type="button"
-            onClick={() => swiperRef.current?.slideNext()}
-            className="absolute right-[-35px] top-1/2 z-10 hidden -translate-y-1/2 text-[var(--accent)] lg:block"
-            aria-label="Наступний слайд"
-          >
-            <FaChevronRight size={22} />
-          </button>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {mainPackages.map((item) => (
+            <ServiceCard key={item.id} item={item} />
+          ))}
+        </div>
 
-          <Swiper
-            modules={[Navigation, Pagination]}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            loop={true}
-            pagination={{
-              clickable: true,
-              el: ".services-pagination",
-              bulletClass: "services-bullet",
-              bulletActiveClass: "services-bullet-active",
-            }}
-            spaceBetween={24}
-            slidesPerView={1}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-              1280: {
-                slidesPerView: 3,
-              },
-            }}
-            className="h-full"
-          >
-            {servicePackages.map((item) => (
-              <SwiperSlide key={item.id} className="!flex !h-auto">
-                <ServiceCard item={item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        <div className="mx-auto mt-10 max-w-[760px] text-center">
+          <p className="text-[15px]  leading-7 text-[var(--text-muted)]">
+            За потреби наповнення кожного пакета може бути змінене або доповнене
+            індивідуально.
+          </p>
 
-          <div className="mt-10 flex justify-center">
-            <div className="services-pagination !static flex w-full items-center justify-center gap-3" />
-          </div>
-
-          <div className="mt-10 flex justify-center">
-            <button className="btn-primary rounded-full px-10 py-4 text-sm font-semibold uppercase tracking-wide">
-              Замовити
+          <div className="mt-8">
+            <button className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95">
+              Отримати консультацію
             </button>
           </div>
         </div>
