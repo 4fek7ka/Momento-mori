@@ -120,10 +120,10 @@ a {
   padding: 12px 20px;
   border-radius: var(--radius-md);
 
-  background: #d9b99b; /* светлее чем accent */
-  border: 1px solid #d9b99b;
+  background: #b89373; /* темнее, благороднее */
+  border: 1px solid #b89373;
 
-  color: #1a1512; /* почти чёрный */
+  color: #1a1512;
 
   font-size: 16px;
   font-weight: 500;
@@ -134,11 +134,10 @@ a {
 }
 
 .btn-primary:hover {
-  background: #e6c6a8;
-  border-color: #e6c6a8;
+  background: #c79d7c; /* твой accent как hover */
+  border-color: #c79d7c;
   transform: translateY(-1px);
 }
-
 .btn-secondary {
   display: inline-flex;
   align-items: center;

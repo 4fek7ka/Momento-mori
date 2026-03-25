@@ -44,19 +44,11 @@ export default function HeroSection() {
 
           {/* buttons */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <button
-              type="button"
-              onClick={openPopup}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95"
-            >
+            <button type="button" onClick={openPopup} className="btn-primary">
               Отримати допомогу
             </button>
 
-            <button
-              type="button"
-              onClick={openPopup}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] border border-[var(--border-color)] px-6 py-3 text-[15px] font-medium text-[var(--text-main)] transition hover:bg-[var(--surface)]"
-            >
+            <button type="button" onClick={openPopup} className="btn-secondary">
               {contacts.phonesFormatted[0]}
             </button>
           </div>

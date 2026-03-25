@@ -43,8 +43,9 @@ export default function ServicesSection() {
 
           <div className="mt-8">
             <button
+              type="button"
               onClick={openPopup}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95"
+              className="btn-primary px-8 py-4 text-sm uppercase tracking-[0.06em]"
             >
               Отримати консультацію
             </button>
