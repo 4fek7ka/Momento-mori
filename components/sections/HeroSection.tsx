@@ -98,15 +98,16 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* floating card */}
+          {/* 
           <div className="absolute bottom-4 left-4 max-w-[260px] rounded-[14px] border border-[rgba(255,255,255,0.18)] bg-[rgb(245,239,231)] px-5 py-4 backdrop-blur-sm">
             <p className="text-[12px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
               Перший контакт
             </p>
             <p className="mt-2 text-[15px] leading-6 text-[var(--text-main)]">
-              Виїзд агента та консультація без зайвого навантаження для родини.
+              Виїзд агента та консультація без зайвого навантаження для родини. 
             </p>
-          </div>
+          </div> 
+          */}
         </div>
       </div>
     </section>
