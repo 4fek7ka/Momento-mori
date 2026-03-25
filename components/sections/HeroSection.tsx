@@ -99,7 +99,7 @@ export default function HeroSection() {
           </div>
 
           {/* floating card */}
-          <div className="absolute bottom-4 left-4 max-w-[260px] rounded-[14px] border border-[rgba(255,255,255,0.18)] bg-[rgba(245,239,231,0.88)] px-5 py-4 backdrop-blur-sm">
+          <div className="absolute bottom-4 left-4 max-w-[260px] rounded-[14px] border border-[rgba(255,255,255,0.18)] bg-[rgb(245,239,231)] px-5 py-4 backdrop-blur-sm">
             <p className="text-[12px] uppercase tracking-[0.16em] text-[var(--text-muted)]">
               Перший контакт
             </p>
