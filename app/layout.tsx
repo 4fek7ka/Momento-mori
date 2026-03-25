@@ -16,12 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Momento mori",
+  title: "Elysium",
   icons: {
-    icon: "/favicon.svg",
+    icon: [{ url: "/favicon.png", type: "image/png" }],
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
