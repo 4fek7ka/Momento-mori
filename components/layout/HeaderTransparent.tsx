@@ -21,24 +21,24 @@ export default function HeaderTransparent() {
   return (
     <>
       <header className="absolute top-0 z-50 w-full text-[var(--text-main)]">
-        <div className="mx-auto flex h-[120px] max-w-[1600px] items-center justify-between px-6 md:px-8">
-          {/* LOGO + NAME */}
+        <div className="mx-auto flex h-[96px] max-w-[1400px] items-center justify-between px-6">
+          {/* LOGO */}
           <Link
             href="/"
-            className="flex items-center gap-3 md:gap-4"
+            className="flex items-center gap-3"
             onClick={closeMenu}
           >
             <Image
               src="/images/logo.png"
               alt="Логотип Елізій"
-              width={64}
-              height={64}
+              width={48}
+              height={48}
               priority
-              className="h-auto w-[42px] opacity-90 md:w-[52px] lg:w-[64px]"
+              className="h-auto w-[40px] md:w-[48px]"
             />
 
             <span
-              className="text-[28px] leading-none text-[var(--accent)] md:text-[36px] lg:text-[42px]"
+              className="text-[28px] tracking-wide text-[var(--accent)] md:text-[32px]"
               style={{ fontFamily: "serif" }}
             >
               {siteConfig.name}
@@ -46,7 +46,7 @@ export default function HeaderTransparent() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden items-center gap-10 text-[18px] md:flex">
+          <nav className="hidden items-center gap-10 text-[16px] md:flex">
             {navigationLinks.map((link) => (
               <Link
                 key={link.href}
@@ -59,27 +59,33 @@ export default function HeaderTransparent() {
           </nav>
 
           {/* DESKTOP CONTACT */}
-          <div className="hidden text-right text-[16px] leading-[1.4] md:block">
-            <p className="text-[var(--accent)]">Цілодобово:</p>
+          <div className="hidden text-right md:block">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--accent)]">
+              Цілодобово
+            </p>
 
-            {siteConfig.contacts.phones.map((phone, index) => (
+            {siteConfig.contacts.phones.map((phone, i) => (
               <a
                 key={phone}
                 href={`tel:${phone}`}
-                className="block transition hover:text-[var(--accent)]"
+                className={`block transition hover:text-[var(--accent)] ${
+                  i === 0
+                    ? "mt-1 text-[18px] font-medium"
+                    : "text-[15px] text-[var(--text-secondary)]"
+                }`}
               >
-                {siteConfig.contacts.phonesFormatted[index]}
+                {siteConfig.contacts.phonesFormatted[i]}
               </a>
             ))}
           </div>
 
-          {/* MOBILE BURGER */}
+          {/* BURGER */}
           <button
             type="button"
             aria-label={isMenuOpen ? "Закрити меню" : "Відкрити меню"}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="relative z-[80] flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(212,175,135,0.4)] bg-[rgba(10,10,10,0.45)] backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition duration-300 hover:border-[var(--accent)] md:hidden"
+            className="relative z-[80] flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(212,175,135,0.45)] bg-[rgba(10,10,10,0.45)] backdrop-blur-md shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition duration-300 hover:border-[var(--accent)] md:hidden"
           >
             <span className="relative flex h-[18px] w-[22px] flex-col justify-between">
               <span
@@ -122,6 +128,7 @@ export default function HeaderTransparent() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
+          {/* NAV */}
           <nav className="flex flex-col gap-6 text-[22px]">
             {navigationLinks.map((link) => (
               <Link
@@ -135,23 +142,24 @@ export default function HeaderTransparent() {
             ))}
           </nav>
 
+          {/* CONTACT */}
           <div className="mt-10 border-t border-[rgba(255,255,255,0.08)] pt-6">
             <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--accent)]">
               Цілодобово
             </p>
 
             <div className="mt-4 space-y-3">
-              {siteConfig.contacts.phones.map((phone, index) => (
+              {siteConfig.contacts.phones.map((phone, i) => (
                 <a
                   key={phone}
                   href={`tel:${phone}`}
                   className={`block transition hover:text-[var(--accent)] ${
-                    index === 0
+                    i === 0
                       ? "text-[22px] font-medium text-[var(--text-main)]"
                       : "text-[18px] text-[var(--text-secondary)]"
                   }`}
                 >
-                  {siteConfig.contacts.phonesFormatted[index]}
+                  {siteConfig.contacts.phonesFormatted[i]}
                 </a>
               ))}
             </div>
