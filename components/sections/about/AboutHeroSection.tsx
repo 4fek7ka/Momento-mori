@@ -1,4 +1,10 @@
+"use client";
+
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
+
 export default function AboutHeroSection() {
+  const { openPopup } = useContactPopup();
+
   return (
     <section
       className="relative min-h-[820px] overflow-hidden text-white"
@@ -53,7 +59,11 @@ export default function AboutHeroSection() {
             </div>
 
             <div className="mt-16">
-              <button className="btn-primary px-10 py-5 text-sm uppercase tracking-[0.04em]">
+              <button
+                type="button"
+                onClick={openPopup}
+                className="btn-primary px-10 py-5 text-sm uppercase tracking-[0.04em]"
+              >
                 ЗВ’ЯЗАТИСЯ З НАМИ
               </button>
             </div>

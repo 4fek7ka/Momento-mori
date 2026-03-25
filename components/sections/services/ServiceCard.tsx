@@ -1,11 +1,16 @@
+"use client";
+
 import { FaCheckCircle } from "react-icons/fa";
 import type { ServicePackage } from "@/data/servicePackages";
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
 
 type ServiceCardProps = {
   item: ServicePackage;
 };
 
 export default function ServiceCard({ item }: ServiceCardProps) {
+  const { openPopup } = useContactPopup();
+
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-[18px] border border-[var(--border-color)] bg-[var(--surface)] text-[var(--text-main)] shadow-[var(--shadow-soft)]">
       <div className="flex h-[330px] items-center justify-center border-b border-[var(--border-color)] bg-[var(--bg-main)] px-6 py-8">
@@ -48,7 +53,10 @@ export default function ServiceCard({ item }: ServiceCardProps) {
         </ul>
 
         <div className="mt-8 pt-4">
-          <button className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] border border-[var(--border-color)] px-5 py-3 text-[15px] font-medium text-[var(--text-main)] transition hover:bg-[var(--bg-main)]">
+          <button
+            onClick={openPopup}
+            className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] border border-[var(--border-color)] px-5 py-3 text-[15px] font-medium text-[var(--text-main)] transition hover:bg-[var(--bg-main)]"
+          >
             Дізнатися більше
           </button>
         </div>

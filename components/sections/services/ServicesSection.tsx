@@ -2,9 +2,11 @@
 
 import { servicePackages } from "@/data/servicePackages";
 import ServiceCard from "@/components/sections/services/ServiceCard";
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
 
 export default function ServicesSection() {
   const mainPackages = servicePackages.filter((item) => !item.isFeatured);
+  const { openPopup } = useContactPopup();
 
   return (
     <section
@@ -34,13 +36,16 @@ export default function ServicesSection() {
         </div>
 
         <div className="mx-auto mt-10 max-w-[760px] text-center">
-          <p className="text-[15px]  leading-7 text-[var(--text-muted)]">
+          <p className="text-[15px] leading-7 text-[var(--text-muted)]">
             За потреби наповнення кожного пакета може бути змінене або доповнене
             індивідуально.
           </p>
 
           <div className="mt-8">
-            <button className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95">
+            <button
+              onClick={openPopup}
+              className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95"
+            >
               Отримати консультацію
             </button>
           </div>

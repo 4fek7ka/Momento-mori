@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 import { services } from "@/data/previewPackages";
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
 
 export default function ServicesPreviewSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeItem = services[activeIndex];
+  const { openPopup } = useContactPopup();
 
   return (
     <section className="bg-[var(--bg-main)] px-6 py-24 text-[var(--text-main)]">
@@ -93,7 +95,11 @@ export default function ServicesPreviewSection() {
             </div>
 
             <div className="mt-8">
-              <button className="btn-secondary w-full justify-center ">
+              <button
+                type="button"
+                onClick={openPopup}
+                className="btn-secondary w-full justify-center"
+              >
                 {activeItem.button}
               </button>
             </div>

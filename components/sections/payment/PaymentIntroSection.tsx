@@ -1,4 +1,10 @@
+"use client";
+
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
+
 export default function PaymentIntroSection() {
+  const { openPopup } = useContactPopup();
+
   return (
     <section className="bg-[var(--bg-secondary)] text-[var(--text-main)]">
       <div className="mx-auto max-w-[1400px] px-8 pb-24 pt-[170px] md:pb-32">
@@ -42,10 +48,18 @@ export default function PaymentIntroSection() {
               <span>офіційний сервіс monobank</span>
             </div>
 
-            <div className="mt-14">
-              <button className="btn-primary px-10 py-4 text-sm uppercase tracking-[0.06em]">
+            <div className="mt-14 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <button
+                type="button"
+                onClick={openPopup}
+                className="btn-primary px-10 py-4 text-sm uppercase tracking-[0.06em]"
+              >
                 ОФОРМИТИ
               </button>
+
+              <p className="text-[13px] text-[var(--text-muted)]">
+                Ми пояснимо умови та допоможемо з оформленням
+              </p>
             </div>
           </div>
 
@@ -59,10 +73,8 @@ export default function PaymentIntroSection() {
                   className="h-full w-full object-cover"
                 />
 
-                {/* затемнение */}
                 <div className="absolute inset-0 bg-black/50" />
 
-                {/* контент */}
                 <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
                   <div className="mt-4 border-t border-white/20 pt-5">
                     <p className="text-2xl font-semibold leading-tight md:text-3xl">

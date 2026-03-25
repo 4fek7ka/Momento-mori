@@ -1,11 +1,12 @@
 "use client";
 
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
+
 const features = [
   {
     title: "Ритуальні послуги",
     text: "Організація поховання або кремації в Одесі та області з повним супроводом.",
   },
-
   {
     title: "Транспорт та логістика",
     text: "Катафалк, перевезення, організація процесії та супровід родини.",
@@ -21,6 +22,8 @@ const features = [
 ];
 
 export default function CondolenceSection() {
+  const { openPopup } = useContactPopup();
+
   return (
     <section
       className="relative overflow-hidden text-[var(--text-main)]"
@@ -43,7 +46,8 @@ export default function CondolenceSection() {
           <h2 className="mt-5 text-4xl font-medium md:text-5xl">
             Співчуваємо Вашій втраті
           </h2>
-          <div className="flex justify-center ">
+
+          <div className="flex justify-center">
             <p className="mt-8 max-w-[640px] text-center text-[18px] leading-8 text-[var(--text-secondary)]">
               Ми поруч, щоб взяти на себе всі організаційні питання та допомогти
               пройти цей складний період спокійно та гідно.
@@ -51,7 +55,11 @@ export default function CondolenceSection() {
           </div>
 
           <div className="mt-10">
-            <button className="btn-primary px-10 py-4 text-sm font-semibold uppercase tracking-wide">
+            <button
+              type="button"
+              onClick={openPopup}
+              className="btn-primary px-10 py-4 text-sm font-semibold uppercase tracking-wide"
+            >
               Отримати допомогу
             </button>
           </div>

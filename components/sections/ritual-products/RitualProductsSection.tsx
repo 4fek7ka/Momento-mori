@@ -1,6 +1,11 @@
+"use client";
+
 import { ritualProducts } from "@/data/ritualProducts";
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
 
 export default function RitualProductsSection() {
+  const { openPopup } = useContactPopup();
+
   return (
     <section
       className="relative overflow-hidden text-white"
@@ -73,10 +78,19 @@ export default function RitualProductsSection() {
           ))}
         </div>
 
-        <div className="mt-14">
-          <button className="btn-primary px-10 py-4 text-sm uppercase tracking-[0.08em]">
-            Завантажити прайс
+        {/* CTA */}
+        <div className="mt-14 flex flex-col items-start gap-4 md:flex-row md:items-center">
+          <button
+            type="button"
+            onClick={openPopup}
+            className="btn-primary px-10 py-4 text-sm uppercase tracking-[0.08em]"
+          >
+            Отримати консультацію
           </button>
+
+          <p className="text-[13px] text-white/60">
+            Підберемо варіанти під ваш бюджет і побажання
+          </p>
         </div>
       </div>
     </section>

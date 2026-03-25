@@ -1,5 +1,7 @@
 "use client";
 
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
+
 const principles = [
   {
     title: "Людяність важливіша за формальність.",
@@ -16,6 +18,8 @@ const principles = [
 ];
 
 export default function AboutSection() {
+  const { openPopup } = useContactPopup();
+
   return (
     <section className="bg-[var(--bg-secondary)] px-6 py-24 text-[var(--text-main)]">
       <div className="mx-auto max-w-[1100px]">
@@ -50,6 +54,17 @@ export default function AboutSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* CTA (новое) */}
+        <div className="mt-20 flex justify-center">
+          <button
+            type="button"
+            onClick={openPopup}
+            className="inline-flex min-h-[52px] items-center justify-center rounded-[12px] border border-[var(--border-color)] px-8 py-4 text-[15px] font-medium text-[var(--text-main)] transition hover:bg-[var(--bg-main)] hover:border-[var(--accent)]"
+          >
+            Зв’язатися з нами
+          </button>
         </div>
       </div>
     </section>

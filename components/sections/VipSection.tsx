@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { vipGroups, vipImages } from "@/data/vipPackage";
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
 
 export default function VipSection() {
+  const { openPopup } = useContactPopup();
+
   return (
     <section className="bg-[var(--bg-main)] px-6 py-20 text-[var(--text-main)]">
       <div className="mx-auto max-w-[1280px]">
@@ -37,7 +40,7 @@ export default function VipSection() {
             </p>
 
             <div className="mt-8">
-              <button className="btn-primary">
+              <button type="button" onClick={openPopup} className="btn-primary">
                 Отримати преміальну консультацію
               </button>
             </div>

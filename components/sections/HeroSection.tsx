@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { siteConfig } from "@/data/site";
+import { useContactPopup } from "@/components/providers/ContactPopupProvider";
 
 export default function HeroSection() {
   const { name, tagline, contacts } = siteConfig;
+  const { openPopup } = useContactPopup();
 
   return (
     <section className="bg-[var(--bg-main)] text-[var(--text-main)]">
@@ -12,7 +16,7 @@ export default function HeroSection() {
           {/* LOGO */}
           <div className="mb-6">
             <Image
-              src="/images/logo.png" // если в public/images/
+              src="/images/logo.png"
               alt="Логотип Елізій"
               width={110}
               height={110}
@@ -40,19 +44,21 @@ export default function HeroSection() {
 
           {/* buttons */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a
-              href={`tel:${contacts.phones[0]}`}
+            <button
+              type="button"
+              onClick={openPopup}
               className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] bg-[var(--accent)] px-6 py-3 text-[15px] font-medium text-[var(--bg-main)] transition hover:brightness-95"
             >
               Отримати допомогу
-            </a>
+            </button>
 
-            <a
-              href={`tel:${contacts.phones[0]}`}
+            <button
+              type="button"
+              onClick={openPopup}
               className="inline-flex min-h-[48px] items-center justify-center rounded-[10px] border border-[var(--border-color)] px-6 py-3 text-[15px] font-medium text-[var(--text-main)] transition hover:bg-[var(--surface)]"
             >
               {contacts.phonesFormatted[0]}
-            </a>
+            </button>
           </div>
 
           {/* meta */}
